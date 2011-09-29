@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<title>Treasure Hunters </title>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<script type="text/javascript" src="/unitpngfix.js"></script>
+</head>
+<body>
+
+<div id="main_container">
+  <div class="top_leafs"><img src="/images/top_leafs.png" alt="" title=" "/></div>
+    <div id="header">
+   	  <div class="logo">
+        <a href="index.html">chipotle family</a>
+      </div>
+      <div class="menu">
+        <ul>                            
+          <li ><a href="/index.html">home</a></li>
+          <li><a href="/pages/theories">theories</a></li>
+          <li><a href="/pages/photos">photos</a></li>
+          <li class="selected"><a href="/pages/tools">tools</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="center_content">
+      <div class="left_content">
+        <h1>Decoder Matrix</h1>
+        <% letters = %W{a b c d e f g h i j k l m n o p q r s t u v w x y z} %>
+        <table>
+        <% (1..26).each do |offset| %>
+          <tr>
+	      <% letters.each do |l| %>
+	          <td><%= l.to_s %></td>
+	      <% end %>
+	      <%
+	        last = letters.pop
+	        letters.unshift(last)
+	      %>
+	      </tr>
+	    <% end %>
+	    </table>
+      </div>
+      <div class="bottom_content">
+        <div class="about_text">
+          
+        </div>
+                
+        <div class="friends_list">
+        </div>
+                
+        <div class="bottom_right">
+        </div>
+                
+        <div class="footer">
+          &copy; Chipotle Family 2011. All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- end of main_container -->
+
+</body>
+</html>
