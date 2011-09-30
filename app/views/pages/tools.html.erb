@@ -25,12 +25,39 @@
     </div>
     <div id="center_content">
       <div class="left_content">
-	   
-        <h1>Decoder Matrix</h1>
-        <% 
+	    <% 
            letters = %W{a b c d e f g h i j k l m n o p q r s t u v w x y z} 
            reversed_letters = letters.reverse
         %>
+	    <form action='/pages/tools' method=post>
+		  <h2>Enter a Message</h2>
+		  <%= text_field :string, :string %>
+		  <%= submit_tag "Encode" %>
+		  <h2>Encoded:</h2><p><%= @new_string %></p>
+		</form>
+		
+	    <h1>Decoder Matrix</h1>
+	    <table>
+		<% (0..25).each do |offset| %>
+		  <tr>
+		  <td><%= letters[offset] %></td>	
+	      <td><%= reversed_letters[offset] %></td>
+	      </tr>
+	    <% end %>
+	    </table>
+
+	    <h2>Puzzle</h2>
+	    <p>Z YFXF ZM VZI</p>
+	    <h2>Solution(?)</h2>
+	    <p>A buck an ear</p>
+	    <form action='/pages/tools'>
+		  <h2>Enter a Message</h2>
+		  <%= text_field :string, :string %>
+		  <%= submit_tag "Encode" %>
+		</form>
+		   
+        <h1>Alternate Decoder Matrix</h1>
+
         
         <table>
         <% (1..26).each do |offset| %>
@@ -46,20 +73,7 @@
 	    <% end %>
 	    </table>
 	
-	    <h1>Alternate Decoder Matrix</h1>
-	    <table>
-		<% (0..25).each do |offset| %>
-		  <tr>
-		  <td><%= letters[offset] %></td>	
-	      <td><%= reversed_letters[offset] %></td>
-	      </tr>
-	    <% end %>
-	    </table>
 
-	    <h2>Puzzle</h2>
-	    <p>Z YFXF ZM VZI</p>
-	    <h2>Solution(?)</h2>
-	    <p>A buck an ear</p>
       </div>
       <div class="bottom_content">
         <div class="about_text">
