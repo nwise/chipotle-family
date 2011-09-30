@@ -25,8 +25,13 @@
     </div>
     <div id="center_content">
       <div class="left_content">
+	   
         <h1>Decoder Matrix</h1>
-        <% letters = %W{a b c d e f g h i j k l m n o p q r s t u v w x y z} %>
+        <% 
+           letters = %W{a b c d e f g h i j k l m n o p q r s t u v w x y z} 
+           reversed_letters = letters.reverse
+        %>
+        
         <table>
         <% (1..26).each do |offset| %>
           <tr>
@@ -39,8 +44,18 @@
 	      %>
 	      </tr>
 	    <% end %>
+	    </table>
+	
+	    <h1>Alternate Decoder Matrix</h1>
+	    <table>
+		<% (0..25).each do |offset| %>
+		  <tr>
+		  <td><%= letters[offset] %></td>	
+	      <td><%= reversed_letters[offset] %></td>
+	      </tr>
+	    <% end %>
+	    </table>
 
-	    </table><br><br>
 	    <h2>Puzzle</h2>
 	    <p>Z YFXF ZM VZI</p>
 	    <h2>Solution(?)</h2>
